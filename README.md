@@ -46,4 +46,4 @@ And you might wanna link the library when compiling:
 
 ## Source
 
-[Exlanation for installation](https://web.eecs.umich.edu/~sugih/courses/eecs487/glut-howto/glfw/)
+[Explanation for installation](https://web.eecs.umich.edu/~sugih/courses/eecs487/glut-howto/glfw/)
