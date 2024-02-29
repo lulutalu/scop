@@ -2,7 +2,7 @@
  This mini project is a first step towards the use of OpenGL.
  One of the first project inside of the Graphics branch at 42.
 
-# Libraries
+## Libraries
  To ensure the proper functioning of the program, you must have the following libraries installed:
 
  ```bash
@@ -32,15 +32,14 @@
  /usr/local/lib/libglfw3.a
  ```
 
-# Compilation
-    Now all you need is to include the library in your project.
-    ```c
-    #include <GLFW/glfw3.h>
-    ```
+## Compilation
 
-    And you might wanna link the library when compiling:
-    ```bash
-    -lglfw3 -lGL -lm -lXrandr -lXi -lX11 -lXxf86vm -lpthread
-    ```
+Now all you need is to include the library in your project.
+```c
+#include <GLFW/glfw3.h>
+```
 
-
+And you might wanna link the library when compiling:
+```bash
+-lglfw3 -lGL -lm -lXrandr -lXi -lX11 -lXxf86vm -lpthread
+```
