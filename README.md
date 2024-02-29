@@ -43,3 +43,7 @@ And you might wanna link the library when compiling:
 ```bash
 -lglfw3 -lGL -lm -lXrandr -lXi -lX11 -lXxf86vm -lpthread
 ```
+
+## Source
+
+[Exlanation for installation](https://web.eecs.umich.edu/~sugih/courses/eecs487/glut-howto/glfw/)
