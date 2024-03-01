@@ -59,3 +59,4 @@ pkg-config --static --libs glfw3
 ## Source
 
 [Explanation for installation](https://web.eecs.umich.edu/~sugih/courses/eecs487/glut-howto/glfw/)
+[Explanation for Compilation](https://www.glfw.org/docs/latest/build_guide.html#build_link_pkgconfig)
