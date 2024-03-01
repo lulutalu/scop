@@ -45,8 +45,9 @@ SRCS_FILES		= main.cpp \
 
 NAME						= scop
 CXX							= c++
+C								= gcc
 CXXFLAGS				= -Wall -Wextra -Werror -std=c++17 -I/usr/local/include
-OGLFLAGS				= -L/usr/local/lib -lglfw3 -lrt -lm -lXrandr -lXrender -lXi -lXfixes -lXxf86vm -lXext -lX11 -lpthread -lxcb -lXau -lXdmcp -lGL
+OGLFLAGS				= -L/usr/local/lib -lrt -lm -lXrandr -lXrender -lXi -lXfixes -lXxf86vm -lXext -lX11 -lpthread -lxcb -lXau -lXdmcp -lGL -ldl -lglfw
 DEBUG_CXXFLAGS	= -g3 -fsanitize=address -fno-omit-frame-pointer
 
 # COMPILATION ------------------------------------------------------------------
@@ -63,14 +64,17 @@ OBJS					= $(addprefix $(O_DIR)/, $(OBJS_FILES))
 
 all:	${NAME}
 
-${NAME}: ${OBJS}
+${NAME}: ${OBJS} GLAD
 	@printf "\n"
-	@${CXX} -o ${NAME} ${OBJS} ${OGLFLAGS}
+	@${CXX} -o ${NAME} ${OBJS} ${O_DIR}/glad.o ${OGLFLAGS}
 	@printf "${GREEN}💻 Successfully created ${NAME} executable${RESET} ✅\n"
 
 ${OBJS}: ${O_DIR}/%.o : ${SRCS_DIR}/%.cpp ${DIRS}
 	@${CXX} ${CXXFLAGS} -o $@ -c $<
 	@printf "\e[1k\r${BUILD}🚧 $@ from $< 🚧${RESET}"
+
+GLAD:
+	@${C} -o ${O_DIR}/glad.o -c ${SRCS_DIR}/glad.c
 
 ${O_DIR}:
 	@${MKDIR} ${O_DIR}
