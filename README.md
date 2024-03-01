@@ -43,6 +43,18 @@ And you might wanna link the library when compiling:
 ```bash
 -lglfw3 -lGL -lm -lXrandr -lXi -lX11 -lXxf86vm -lpthread
 ```
+Note :
+If it's installed on your machine, it's recommended to use pkg-config to know how to link and include the library for compilation.<br>
+
+Add to CXXFLAGS :
+```bash
+pkg-config --cflags glfw3
+```
+
+Add to LINKFLAGS :
+```bash
+pkg-config --static --libs glfw3
+```
 
 ## Source
 
