@@ -7,8 +7,8 @@
 
   struct glfwStruct {
     GLFWwindow* window;
-    unsigned int shaderProgram;
-    unsigned int VAO;
+    unsigned int shaderProgram[2];
+    unsigned int VAOs[2];
     int width = 1000;
     int height = 800;
   };
