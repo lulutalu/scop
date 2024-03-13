@@ -24,6 +24,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
     }
     if (!fFragment.is_open()) {
       std::cout << "ERROR::SHADER::FRAGMENT::FILE_OPENING_ERROR" << std::endl;
+      exit(1);
     }
 
     std::stringstream streamVertex, streamFragment;
@@ -37,8 +38,8 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
     vertexCode = streamVertex.str();
     fragmentCode = streamFragment.str();
 
-  } catch (std::ifstream::failure e) {
-    std::cout << "ERROR::SHADER::FILE_NOT_SUCCESSFULLY_READ" << std::endl;
+  } catch (const std::ios_base::failure &e) {
+    std::cout << "ERROR::SHADER::FILE_NOT_SUCCESSFULLY_READ\n" << e.what() << std::endl;
     exit(1);
   }
 
